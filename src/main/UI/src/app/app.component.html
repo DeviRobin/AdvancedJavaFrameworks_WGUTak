@@ -16,6 +16,14 @@
       <div class="navbar">
         <div class="brand"><a href="/#welcome">Landon <span>Hotel</span></a></div>
       </div><!-- navbar -->
+      <div class="scene" id="presentation" style="color: #b5b7e1;font-size: x-large;font-weight: bold">
+        <ul *ngIf="message">
+          <li *ngFor="let message of message">
+            {{message}}
+          </li>
+        </ul>
+
+      </div>
     </nav>
   </div>
 </header>
@@ -23,7 +31,7 @@
   <div class="scene" id="welcome">
     <article class="content">
 
- 
+
 
       <div class="row">
         <div class=""col-12>
@@ -58,7 +66,7 @@
               </div>
               </form>
 
-        
+
         </div>
       </div>
 
