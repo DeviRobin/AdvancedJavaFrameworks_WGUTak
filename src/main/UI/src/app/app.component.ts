@@ -28,11 +28,13 @@ export class AppComponent implements OnInit{
   currentCheckInVal!:string;
   currentCheckOutVal!:string;
   message:string[]=[]
-
+  times:string[]=[]
   getWelcomeMessage():Observable<string[]> {
     return this.httpClient.get<string[]>(this.baseURL +"/api/presentation");
   }
-
+  getFormattedTime():Observable<string[]>{
+    return this.httpClient.get<string[]>(this.baseURL +"/api/times")
+  }
   ngOnInit(){
       this.roomsearch= new FormGroup({
         checkin: new FormControl(' '),
@@ -42,7 +44,8 @@ export class AppComponent implements OnInit{
       this.getWelcomeMessage().subscribe((data)=> {
         this.message = data;})
         //     this.rooms=ROOMS;
-
+      this.getFormattedTime().subscribe((data)=> {
+        this.times = data;})
 
     const roomsearchValueChanges$ = this.roomsearch.valueChanges;
 
@@ -104,6 +107,8 @@ export interface Room{
   id:string;
   roomNumber:string;
   price:string;
+  priceCAD:string;
+  priceEUR:string;
   links:string;
 
 

@@ -35,6 +35,12 @@
 
       <div class="row">
         <div class=""col-12>
+          <div class="col-12" style="color:crimson; font-size: x-large;font-weight: bold" *ngIf="times">
+            <p>Live Presentation on March 20, 2024 <br> Times</p>
+            <p>US/Eastern: {{times[1]}} AM</p>
+            <p>US/Mountain: {{times[2]}} AM </p>
+            <p>UTC: {{times[3]}} PM </p>
+          </div>
           <div class="gallery">
             <img src="assets/images/intro_room.jpg" alt="Intro Gallery Room Sample Pictures">
             <img src="assets/images/intro_pool.jpg" alt="Intro Gallery Pool Sample Pictures">
